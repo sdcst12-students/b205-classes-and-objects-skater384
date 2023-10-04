@@ -12,18 +12,25 @@ class Calc:
     principal = 0
     rate = 0
     nPeriods = 0
-
-    def __init__(self):
-        #more input parameters needed
-        return
-
-    def interest(self,t):
-        return 
     
-    def amount(self,t):
+    def __init__(self,P=0,r=0,n=0):
+        #more input parameters needed
+        self.principal = P
+        self.rate = r
+        self.nPeriods = n
+        
         return
+
+    def interest(self,t,):
+        
+        return round((self.principal*(   (1+self.rate/100/self.nPeriods)**(self.nPeriods*t) ))-self.principal,2)
+        
+    def amount(self,t):
+        return round((self.principal*(   (1+self.rate/100/self.nPeriods)**(self.nPeriods*t) )),2)
 
 a = Calc(P=1000,r=4,n=2)
+print(a.interest(3))
+print(a.amount(5))
 assert a.interest(3) == 126.16
 assert a.amount(5) == 1218.99
 

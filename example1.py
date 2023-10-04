@@ -36,10 +36,15 @@ class circle:
             self.calcDiameterToRadius()
         else:
             print("No valid radius or diameter defined.  Radius or diameter needs to be set.")
-    
-    def __del__(self):
-        print("this object destroyed")
+
     
 
-a = circle(r=-1)
+a = circle(r=1)
 print( a.area() )
+b = circle(d=10)
+
+print(a.radius, b.radius)
+
+a.radius =3
+
+print(a.radius)
